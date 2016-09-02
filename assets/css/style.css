@@ -1,0 +1,10 @@
+h1{color:Red;}
+.esconderDatos{display: none;}
+
+ul li span{ font-weight: bold;}
+
+.pelicula-title{cursor: pointer;}
+
+.pelicula-title:hover{text-decoration: underline;}
+
+.clicked{font-size: 30px;}

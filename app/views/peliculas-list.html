@@ -1,0 +1,21 @@
+<p>{{datoservicio}}</p>
+<p>Pelicula favorita</p>
+<div>
+    <button (click)="onMostrarEsconder(true)" [class.esconderDatos]="mostrarDatos===true">Mostrar Datos</button>
+    <button (click)="onMostrarEsconder(false)" [class.esconderDatos]="mostrarDatos===false">Ocultar Datos</button>
+
+    <ul *ngIf="mostrarDatos===true">
+        <li><span>Titulo:</span> {{componente1.titulo}}</li>
+        <li><span>Director:</span> {{componente1.director}}</li>
+        <li><span>Año:</span> {{componente1.anio}}</li>
+    </ul>
+</div>
+
+<input [(ngModel)]="componente1.titulo" (keypress)="onLog(true)">
+<h1>Listado de peliculas:</h1>
+<ul *ngFor=" #componente1 of lista_peliculas">
+    <li (click)="onCambioPelicula(componente1)" class="pelicula-title" [class.clicked]="peliculaElegida.id===componente1.id"
+        *ngIf="componente1.titulo">Titulo: {{componente1.titulo}}</li>
+    <li [class.clicked]="peliculaElegida.id===componente1.id" *ngIf="componente1.director">Director: {{componente1.director}}</li>
+    <li [class.clicked]="peliculaElegida.id===componente1.id" *ngIf="componente1.anio">Año: {{componente1.anio}}</li>
+</ul>
